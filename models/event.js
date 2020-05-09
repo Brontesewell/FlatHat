@@ -12,13 +12,17 @@ const eventSchema = new Schema({
         required: true
     },
     price: {
-        tpye: Number,
+        type: Number,
         required: true
     },
     date: {
         type: Date,
         required: true
     },
+    creator: {
+        type: Schema.Types.ObjectId,
+        ref: 'User'
+    }
 });
 
 module.exports = mongoose.model('Event', eventSchema);
